@@ -67,6 +67,7 @@ namespace http.dump.service.repositories
             var fileName = Path.Combine(BASE_DIRECTORY, id + ".json");
             if (File.Exists(fileName)) { File.Delete(fileName); };
             File.WriteAllText(fileName, JsonSerializer.Serialize(instance));
+            Console.WriteLine($"Dump created {id} [{instance.Method}:{instance.Url}]");
             return id;
         }
         public IList<DumpModel> getAll()
