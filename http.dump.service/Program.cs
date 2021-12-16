@@ -1,8 +1,5 @@
 using http.dump.service.middleware;
 using http.dump.service.repositories;
-DumpRepository.BASE_DIRECTORY = @"c:\temp\dumps";
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
