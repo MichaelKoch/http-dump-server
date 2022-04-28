@@ -25,9 +25,9 @@ namespace http.dump.service.Controllers
         }
         // GET api/<ValuesController>/5
         [HttpGet("")]
-        public IList<DumpModel> GetAll(string id)
+        public IList<string> GetAll()
         {
-            return _repo.getAll();
+            return _repo.getIds();
         }
     }
 }
