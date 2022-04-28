@@ -56,6 +56,7 @@ namespace http.dump.service.middleware
         {
             return new DumpModel()
             {
+                DateTime = DateTime.Now,
 
                 Method = context.Request.Method,
                 Url = context.Request.GetDisplayUrl(),
@@ -82,7 +83,7 @@ namespace http.dump.service.middleware
 
                 var id = repo.Create(GetDump(context));
                 var validUntil = DateTime.Now.Add(new TimeSpan(0, DumpRepository.TTL_IN_MINUTES, 0));
-                var url = context.Request.Scheme + "://" + context.Request.Headers.Host[0] + "/$api/result/" + id;
+                var url = context.Request.Scheme + "://" + context.Request.Headers.Host[0] + "/debug/$api/result/" + id;
                 var result = new { validUntil, url };
                 context.Response.ContentType = "application/json";
                 //https://www.youtube.com/watch?v=ysgS4P4uHdo

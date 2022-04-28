@@ -26,7 +26,7 @@ namespace http.dump.service.repositories
             }
         }
 
-        public const int TTL_IN_MINUTES = 30;
+        public const int TTL_IN_MINUTES = 60;
 
         public DumpRepository()
         {

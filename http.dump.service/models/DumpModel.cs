@@ -4,9 +4,13 @@ namespace http.dump.service.models
 {
     public class DumpModel
     {
+        public DateTime DateTime
+        {
+            get; set;
+        }
         public string? Method
         {
-            get;set;
+            get; set;
         }
         public string? Url
         {
@@ -28,6 +32,6 @@ namespace http.dump.service.models
         {
             get; set;
         }
-        public IDictionary<string,string[]>? Header { get; set; }
+        public IDictionary<string, string[]>? Header { get; set; }
     }
 }
