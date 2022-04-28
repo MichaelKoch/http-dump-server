@@ -23,6 +23,11 @@ namespace http.dump.service.Controllers
         {
             return _repo.Read(id);
         }
-
+        // GET api/<ValuesController>/5
+        [HttpGet("")]
+        public IList<DumpModel> GetAll(string id)
+        {
+            return _repo.getAll();
+        }
     }
 }
