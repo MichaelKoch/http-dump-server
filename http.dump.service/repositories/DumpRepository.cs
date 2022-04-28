@@ -71,9 +71,6 @@ namespace http.dump.service.repositories
             return id;
         }
         public IList<DumpModel> getAll()
-
-
-
         {
             var retVal = new List<DumpModel>();
             var dumpFileNames = Directory.GetFiles(BASE_DIRECTORY);
@@ -88,7 +85,19 @@ namespace http.dump.service.repositories
             return retVal;
 
         }
+        public IList<string> getIds()
+        {
+            var retVal = new List<string>();
+            var dumpFileNames = Directory.GetFiles(BASE_DIRECTORY);
+            foreach (var fileName in dumpFileNames)
+            {
 
+                retVal.Add(Path.GetFileNameWithoutExtension(fileName));
+
+            }
+            return retVal;
+
+        }
         public void Delete(string id)
         {
             var fileName = Path.Combine(BASE_DIRECTORY, id + ".json");
